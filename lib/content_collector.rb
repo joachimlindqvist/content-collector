@@ -2,7 +2,6 @@ require 'content_collector/version'
 
 require 'rubygems'
 require 'open-uri'
-require 'json'
 
 require 'content_collector/exceptions'
 require 'content_collector/json/parse'
