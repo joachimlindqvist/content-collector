@@ -1,4 +1,5 @@
-require "content_collector/version"
+require 'content_collector/version'
+require 'content_collector/exceptions'
 require 'open-uri'
 require 'json'
 require 'content_collector/json/parse'
@@ -21,7 +22,11 @@ module ContentCollector
 
   def self.get_source_type(url)
     match = SOURCE_TYPES_PATTERN.find { |source| source[:pattern].match(url) }
-    match[:klass]
+    if match
+      match[:klass]
+    else
+      raise NoSourceTypeFound.new("No source type found for #{url}") 
+    end
   end
 
 end
