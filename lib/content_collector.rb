@@ -11,7 +11,7 @@ Dir[SOURCE_TYPES_PATH].each { |file| require file }
 
 module ContentCollector
     
-  SOURCE_TYPES_PATTERN = [
+  SOURCE_TYPES_PATTERNS = [
     { klass: RedditJson, pattern: /((\/\/|www\.)reddit\.com.*(\.json))/i}
   ]
 
@@ -21,7 +21,7 @@ module ContentCollector
   end
 
   def self.get_source_type(url)
-    match = SOURCE_TYPES_PATTERN.find { |source| source[:pattern].match(url) }
+    match = SOURCE_TYPES_PATTERNS.find { |source| source[:pattern].match(url) }
     if match
       match[:klass]
     else
