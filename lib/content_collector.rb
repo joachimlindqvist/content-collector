@@ -6,8 +6,9 @@ require 'content_collector/json/parse'
 require 'content_collector/item'
 require 'content_collector/source_base'
 
-SOURCE_TYPES_PATH = File.join(File.dirname(__FILE__), 'content_collector', 'source_types', '*rb')
-Dir[SOURCE_TYPES_PATH].each { |file| require file }
+Dir[File.join(File.dirname(__FILE__), 'content_collector', 'source_types', '*.rb')].each do |file| 
+  require file 
+end
 
 module ContentCollector
     
