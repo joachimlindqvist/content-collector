@@ -1,2 +1,2 @@
-class NoSourceTypeFound < Exception; end
-class WrongImplementation < Exception; end
+class NoSourceTypeFound < StandardError; end
+class WrongImplementation < StandardError; end

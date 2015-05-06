@@ -3,7 +3,7 @@ require 'content_collector/version'
 require 'rubygems'
 require 'open-uri'
 
-require 'content_collector/exceptions'
+require 'content_collector/errors'
 require 'content_collector/json/parse'
 require 'content_collector/item'
 require 'content_collector/source_base'
